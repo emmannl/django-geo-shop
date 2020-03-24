@@ -23,7 +23,9 @@ class RegisterAsUser(CreateView):
         return super().get_context_data(**kwargs)
 
     def form_valid(self, form):
-        user = form.save()
+        user = form.save(commit=False)
+        user.user_type = 2
+        user.save()
         login(self.request, user)
         return redirect('/')
 
@@ -34,11 +36,13 @@ class RegisterAsShopOwner(CreateView):
     template_name = 'registration/register.html'
 
     def get_context_data(self, **kwargs):
-        kwargs['user_type'] = User.SHOP_USER
+        kwargs['user_type'] = User.SHOP_OWNER
         kwargs['title'] = 'Register as shop owner'
         return super().get_context_data(**kwargs)
 
     def form_valid(self, form):
-        user = form.save()
+        user = form.save(commit=False)
+        user.user_type = 2
+        user.save()
         login(self.request, user)
         return redirect('/')
