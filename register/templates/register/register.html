@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Create an Account{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="card card-login mb-3">
+        <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">
+                <strong>Select an account type</strong>
+            </h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+            <div class="row">
+                <div class="col-6">
+                    <a href="{% url 'login' %}" class="text-light">
+                        <small>
+                            Register
+                        </small>
+                    </a>
+                </div>
+                <div class="col-6 text-right"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

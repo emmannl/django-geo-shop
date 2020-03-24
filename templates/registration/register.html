@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="card card-login mb-3">
+        <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">
+                <strong>{{ title }}</strong>
+            </h4>
+        </div>
+        <div class="card-body">
+            <form method="POST" class="form-group">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-success">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a href="" class="text-light">
+                <small>
+                    Login
+                </small>
+            </a>
+        </div>
+        <div class="col-6 text-right">
+            <a href="{% url 'register:choose-type' %}" class="text-light">
+                <small>
+                    Register as different User type
+                </small>
+            </a>
+        </div>
+    </div>
+{% endblock %}

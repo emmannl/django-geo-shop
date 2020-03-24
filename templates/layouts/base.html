@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Scripts -->
+    <script src="{% static 'shops/js/jquery.min.js' %}" defer=""></script>
+
+    <!-- Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+
+
+    <!-- Styles -->
+    <link href="{% static 'css/material-dashboard.min.css' %}" rel="stylesheet">
+    <title>Shops</title>
+    <style>
+        .wrapper {
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white" type="log">
+    <div class="container">
+        <div class="navbar-wrapper">
+            <a href="/{% url 'shops:welcome' %}" class="navbar-brand">Home</a>
+        </div>
+    </div>
+</nav>
+    <div class="wrapper wrapper-full-page">
+        <div class="page-header login-page header-filter login-bg">
+            <div class="container" style="height: auto;">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 col-md-6 col-sm-8 mx-auto">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

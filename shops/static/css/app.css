@@ -1,0 +1,7 @@
+.login-bg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url(../images/cover.jpg);
+	padding: 15vh 0 !important;
+}

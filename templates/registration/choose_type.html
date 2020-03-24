@@ -1,0 +1,23 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+    <div class="card card-login mb-3">
+        <div class="card-header card-header-primary text-center">
+            <h4 class="card-title">
+                <strong>How Would You Like To Join?</strong>
+            </h4>
+        </div>
+        <div class="card-body">
+            <a href="{% url 'register:as-user' %}" class="btn btn-success">As a User</a>
+            <a href="{% url 'register:as-shop-owner' %}" class="btn btn-primary">As a Shop Owner</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <a href="" class="text-light">
+                <small>
+                    Login
+                </small>
+            </a>
+        </div>
+    </div>
+{% endblock %}
