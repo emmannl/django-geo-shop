@@ -1,0 +1,11 @@
+{% extends 'shops/layouts/base.html' %}
+{% load crispy_forms_filters %}
+{% block content %}
+   <div class="container">
+        <div class="card">
+            <div class="card-body">
+                 {{ form | crispy }}
+            </div>
+        </div>
+   </div>
+{% endblock %}

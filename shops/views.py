@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.contrib.gis.geos import fromstr, Point, GEOSGeometry
 from django.contrib.gis.db.models.functions import Distance
 from django.utils.decorators import method_decorator
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView, TemplateView
 from .models import Shop
 
 
@@ -27,3 +27,9 @@ class ShopsCloseToUser(ListView):
     context_object_name = 'shops'
     queryset = Shop.objects.filter(location__distance_lte=(user_location, D(m=1)))
     template_name = 'shops/user_shops.html'
+
+
+class ShopCreate(CreateView):
+    model = Shop
+    template_name = 'shops/manage/create.html'
+    fields = ['name', 'location', 'street_address']

@@ -26,7 +26,6 @@ class User(AbstractUser):
         return self.user_type == 2
 
 
-
 class Shop(models.Model):
     name = models.CharField(max_length=100)
     location = geoModels.PointField(srid=32140)
