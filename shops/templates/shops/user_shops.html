@@ -1,0 +1,26 @@
+{% extends 'shops/layouts/base.html' %}
+
+{% block content %}
+    <div class="col-md-8 offset-md-2 bg-light shake p-4">
+        <h1>Nearby Shops</h1>
+        {% if shops %}
+            {% for shop in shops %}
+                <li class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">
+                            {{ shop.name }}
+                        </h5>
+                    </div>
+                    <p class="mb-1">
+                        Address: {{ shop.street_address }}
+                    </p>
+                    <small>Distance: {{ shop.distance }}</small>
+                </li>
+            {% endfor %}
+        {% else %}
+            <p class="text-center">
+                No Shops close by.
+            </p>
+        {% endif %}
+    </div>
+{% endblock %}

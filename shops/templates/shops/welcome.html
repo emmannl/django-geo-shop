@@ -1,0 +1,28 @@
+{% extends 'shops/layouts/base.html' %}
+{% block content %}
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h1 class="jumbotron-heading">
+                Geo Shop
+            </h1>
+            <p class="lead text-muted">
+                Find Shops around you. For shop owners, make your business visible to the
+                audience who would respond the most
+            </p>
+            <p>
+                {% if user.is_authenticated %}
+                    {% if user.is_shop_owner %}
+                    <a href="#" class="btn btn-primary my-2">Manage Shops</a>
+                    {% else %}
+                        <a href="{% url 'shops:close-by' %}" class="btn btn-primary my-2">
+                            View Shops Close By
+                        </a>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'register:as-user' %}" class="btn btn-primary my-2">Register as User</a>
+                    <a href="{% url 'register:as-shop-owner' %}" class="btn btn-secondary my-2">Register as Shop Owner</a>
+                {% endif %}
+            </p>
+        </div>
+    </section>
+{% endblock %}

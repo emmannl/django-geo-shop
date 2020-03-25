@@ -6,18 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Scripts -->
-    <script src="{% static 'shops/js/jquery.min.js' %}" defer=""></script>
-
-    <!-- Fonts -->
+    <script src="{% static 'js/core/jquery.min.js' %}" defer=""></script>
 
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
           rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
-
-
-    <!-- Styles -->
     <link href="{% static 'css/material-dashboard.min.css' %}" rel="stylesheet">
+
     <title>Shops</title>
     <style>
         .wrapper {
@@ -29,7 +25,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top text-white" type="log">
     <div class="container">
         <div class="navbar-wrapper">
-            <a href="/{% url 'shops:welcome' %}" class="navbar-brand">Home</a>
+            <a href="{% url 'shops:welcome' %}" class="navbar-brand">Home</a>
         </div>
     </div>
 </nav>

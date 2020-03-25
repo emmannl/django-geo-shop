@@ -126,7 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # self explanatory
-LOGIN_REDIRECT_URL = '/home'
+LOGIN_REDIRECT_URL = '/'
 
 # self explanatory
 LOGIN_URL = '/auth/login'

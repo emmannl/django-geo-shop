@@ -24,7 +24,7 @@ class RegisterAsUser(CreateView):
 
     def form_valid(self, form):
         user = form.save(commit=False)
-        user.user_type = 2
+        user.user_type = 1
         user.save()
         login(self.request, user)
         return redirect('/')
